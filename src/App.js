@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux'
+
+import Home from './Components/Home'
+import Question from './Components/Question'
+import FinalScreen from './Components/FinalScreen'
+
+import './App.css'
 
 function App() {
+  const questions = useSelector((state) => state.questions);
+  const questionIndex = useSelector((state) => state.index);
+  const amount = useSelector((state) => state.amount);
+
+  let component
+
+  if (questions.length && questionIndex + 1 <= amount) {
+    component = <Question setTimer={10} />
+  } else if (!questions.length) {
+    component = <Home />
+  } else {
+    component = <FinalScreen />
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-container">{component}</div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
