@@ -149,7 +149,7 @@ function Question() {
           &emsp;
           Time: {counter}
         </p>
-        <button className='help' onClick={handleHelp}>for 50-50 press here</button> 
+        <button className='help' onClick={handleHelp}>for 50-50 clue press here</button> 
         <p></p>
       </div>
     </div>
