@@ -1,6 +1,7 @@
 # Online-Quiz-Game
 
 Online App that was built in order to apply to Monday.com Full-Stack course.
+
 Side note - was built without any background or knowledge in JS, React, Calling API's.
 
 * App built with React.js
